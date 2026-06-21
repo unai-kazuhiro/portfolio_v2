@@ -98,6 +98,29 @@ export const Animation = ({
   )
 }
 
+// 殺風景さを無くす、リッチな背景コンポーネント
+export const SectionBackground = ({
+  color = 'orange',
+}: {
+  color?: 'orange' | 'blue'
+}) => (
+  <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    {/* ドットのテクスチャで質感をプラス */}
+    <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(#000_1px,transparent_1px)] bg-size-[24px_24px]"></div>
+    {/* ぼんやり光るグラデーション */}
+    <div
+      className={`absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full blur-[120px] mix-blend-multiply opacity-40 ${
+        color === 'orange' ? 'bg-orange-100' : 'bg-blue-100'
+      }`}
+    ></div>
+    <div
+      className={`absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full blur-[120px] mix-blend-multiply opacity-40 ${
+        color === 'orange' ? 'bg-amber-100' : 'bg-indigo-100'
+      }`}
+    ></div>
+  </div>
+)
+
 // 遊び心：タイピング風アニメーションコンポーネント
 export const Typewriter = ({ words }: { words: string[] }) => {
   const [index, setIndex] = useState(0)

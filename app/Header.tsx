@@ -52,7 +52,7 @@ export default function Header() {
           href="#hero"
           onClick={(e) => scrollToSection(e, '#hero')}
           className={`font-bold text-xl md:text-2xl tracking-tighter transition-colors ${
-            isScrolled ? 'text-slate-900' : 'text-white'
+            isScrolled ? 'text-slate-900' : 'text-slate'
           }`}
         >
           Kazuhiro<span className="text-orange-500">.</span>Unai
@@ -66,7 +66,7 @@ export default function Header() {
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
               className={`text-sm font-medium transition-colors hover:text-orange-500 ${
-                isScrolled ? 'text-slate-600' : 'text-white/80'
+                isScrolled ? 'text-slate-600' : 'text-slate/80'
               }`}
             >
               {item.name}
@@ -84,7 +84,7 @@ export default function Header() {
           ) : (
             <Menu
               className={`w-6 h-6 ${
-                isScrolled ? 'text-slate-900' : 'text-white'
+                isScrolled ? 'text-slate-900' : 'text-slate'
               }`}
             />
           )}

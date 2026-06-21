@@ -1,15 +1,18 @@
 'use client'
 
+import Image from 'next/image'
+
 import { User } from 'lucide-react'
 
-import { Animation } from './components/Animation'
+import { Animation, SectionBackground } from './components/Animation'
 
 export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen bg-slate-50 flex items-center py-24"
+      className="min-h-screen bg-white flex items-center py-24"
     >
+      <SectionBackground color="orange" />
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <Animation
@@ -17,10 +20,11 @@ export default function About() {
             animation="slide-right"
           >
             <div className="relative rounded-2xl overflow-hidden aspect-4/5 md:aspect-square shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+              <Image
+                src="/AboutMe.png"
                 alt="Working collaboration"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply"></div>

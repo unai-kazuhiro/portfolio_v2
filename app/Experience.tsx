@@ -2,7 +2,7 @@
 
 import { Briefcase } from 'lucide-react'
 
-import { Animation } from './components/Animation'
+import { Animation, SectionBackground } from './components/Animation'
 
 export default function Experience() {
   const experiences = [
@@ -32,6 +32,7 @@ export default function Experience() {
       id="experience"
       className="min-h-screen bg-white flex items-center py-24 relative overflow-hidden"
     >
+      <SectionBackground color="blue" />
       {/* Background decoration */}
       <div className="absolute top-0 right-[-10] w-1/2 h-full bg-slate-50/50 -skew-x-12 transform origin-top z-0"></div>
 

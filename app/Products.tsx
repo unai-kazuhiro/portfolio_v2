@@ -2,14 +2,15 @@
 
 import { Code } from 'lucide-react'
 
-import { Animation } from './components/Animation'
+import { Animation, SectionBackground } from './components/Animation'
 
 export default function ProductsSection() {
   return (
     <section
       id="products"
-      className="min-h-screen bg-slate-50 flex items-center py-24"
+      className="min-h-screen bg-white flex items-center py-24"
     >
+      <SectionBackground color="blue" />
       <div className="container mx-auto px-6 md:px-12 text-center">
         <Animation animation="scale-up">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">

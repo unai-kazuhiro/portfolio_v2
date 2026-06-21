@@ -2,7 +2,7 @@
 
 import { Layout, Smartphone, Code, Wrench } from 'lucide-react'
 
-import { Animation } from './components/Animation'
+import { Animation, SectionBackground } from './components/Animation'
 
 export default function Skills() {
   const skills = [
@@ -30,8 +30,9 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-slate-900 flex items-center py-24 text-white"
+      className="min-h-screen bg-white-900 flex items-center py-24 text-slate"
     >
+      <SectionBackground color="orange" />
       <div className="container mx-auto px-6 md:px-12">
         <Animation animation="fade-up">
           <div className="flex flex-col items-center mb-16 text-center">
@@ -54,7 +55,7 @@ export default function Skills() {
                 <h3 className="text-2xl font-bold mb-4 text-slate-100">
                   {skill.category}
                 </h3>
-                <p className="text-slate-400 mb-6 grow leading-relaxed">
+                <p className="text-slate-700 mb-6 grow leading-relaxed">
                   {skill.desc}
                 </p>
                 <div className="flex flex-wrap gap-2">

@@ -42,7 +42,7 @@ export default function Hero() {
       left: '10%',
       delay: '0s',
       speed: 20,
-      icon: <Code className="text-white/40 w-10 h-10 md:w-12 md:h-12" />,
+      icon: <Code className="text-slate/40 w-10 h-10 md:w-12 md:h-12" />,
     },
     {
       type: 'glass',
@@ -51,7 +51,7 @@ export default function Hero() {
       left: '80%',
       delay: '1s',
       speed: -30,
-      icon: <Layout className="text-white/40 w-8 h-8 md:w-10 md:h-10" />,
+      icon: <Layout className="text-slate/40 w-8 h-8 md:w-10 md:h-10" />,
     },
     {
       type: 'glass',
@@ -60,7 +60,7 @@ export default function Hero() {
       left: '15%',
       delay: '2s',
       speed: 40,
-      icon: <Smartphone className="text-white/40 w-6 h-6 md:w-8 md:h-8" />,
+      icon: <Smartphone className="text-slate/40 w-6 h-6 md:w-8 md:h-8" />,
     },
     {
       type: 'glass',
@@ -116,7 +116,7 @@ export default function Hero() {
           loading="lazy"
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-slate-900/70 mix-blend-multiply backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-white-900/70 mix-blend-multiply backdrop-blur-[2px]"></div>
         {/* 微細なグリッドパターン（Web/エンジニア感を演出） */}
         <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-size-[40px_40px] pointer-events-none"></div>
       </div>
@@ -160,37 +160,37 @@ export default function Hero() {
           <div className="relative inline-flex items-center justify-center mb-8 pointer-events-auto">
             {/* 装飾的な背後のグロー */}
             <div className="absolute inset-0 bg-orange-500/20 blur-xl rounded-full"></div>
-            <span className="relative inline-block py-1.5 px-5 rounded-full bg-slate-900/50 text-orange-400 border border-orange-500/30 text-sm md:text-base font-semibold tracking-widest backdrop-blur-md shadow-lg">
+            <span className="relative inline-block py-1.5 px-5 rounded-full bg-white-900/50 text-orange-400 border border-orange-500/30 text-sm md:text-base font-semibold tracking-widest backdrop-blur-md shadow-lg">
               SOFTWARE ENGINEER
             </span>
           </div>
         </Animation>
 
         <Animation delay={200} animation="blur-in">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 min-h-[3em] md:min-h-[2.5em] flex flex-col items-center justify-center pointer-events-auto">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate leading-tight mb-6 min-h-[3em] md:min-h-[2.5em] flex flex-col items-center justify-center pointer-events-auto">
             <Typewriter words={['Kazuhiro', 'Unai', 'Kazuhiro Unai']} />
           </h1>
         </Animation>
 
-        <Animation delay={400} animation="fade-up">
-          <div className="relative pointer-events-auto bg-slate-900/30 backdrop-blur-sm border border-white/10 p-6 md:p-8 rounded-3xl max-w-2xl mx-auto mb-12 shadow-2xl">
-            <p className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed drop-shadow-md">
+        {/* <Animation delay={400} animation="fade-up">
+          <div className="relative pointer-events-auto bg-white-900/30 backdrop-blur-sm border border-white/10 p-6 md:p-8 rounded-3xl max-w-2xl mx-auto mb-12 shadow-2xl">
+            <p className="text-lg md:text-xl text-slate-800 font-medium leading-relaxed drop-shadow-md">
               個人経営・小規模ビジネスの課題に寄り添い、
               <br className="hidden md:block" />
               美しく、サクサク動くWebサイトを構築します。
             </p>
           </div>
-        </Animation>
+        </Animation> */}
 
         <Animation delay={600} animation="scale-up">
           <a
             href="#contact"
-            className="group pointer-events-auto relative inline-flex items-center justify-center px-8 py-4 md:px-10 md:py-5 font-bold text-white bg-linear-to-r from-orange-500 to-orange-400 rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(249,115,22,0.6)] active:scale-95"
+            className="group pointer-events-auto relative inline-flex items-center justify-center px-8 py-4 md:px-10 md:py-5 font-bold text-slate-700 bg-linear-to-r from-orange-500 to-orange-400 rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(249,115,22,0.6)] active:scale-95"
           >
             {/* ボタン内のキラッと光るエフェクト */}
             <span className="absolute top-0 left-0 w-full h-full bg-white/20 skew-x-[-45deg] translate-x-[-150%] group-hover:animate-[shine_1s_ease-out]"></span>
             <span className="relative flex items-center gap-2 text-lg">
-              プロジェクトの相談をする{' '}
+              Contact{' '}
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
           </a>
@@ -202,7 +202,7 @@ export default function Hero() {
         <a
           href="#about"
           aria-label="Scroll down"
-          className="block w-8 h-12 rounded-full border-2 border-white/30 items-start justify-center p-2 backdrop-blur-sm hover:border-white/60 transition-colors"
+          className="block w-8 h-12 rounded-full border-2 border-slate/30 items-start justify-center p-2 backdrop-blur-sm hover:border-slate/60 transition-colors"
         >
           <div className="w-1 h-3 bg-orange-400 rounded-full animate-[scroll_2s_ease-in-out_infinite]"></div>
         </a>
