@@ -54,11 +54,6 @@ export default function Contact() {
                 <br />
                 ご相談ください。
               </h3>
-              <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                「こんなWebサイト作れるかな？」「費用はどれくらい？」など、漠然としたご相談でも大歓迎です。
-                <br />
-                こちらのフォームよりお気軽にご連絡ください。
-              </p>
             </div>
           </Animation>
 

@@ -1,11 +1,17 @@
 'use client'
 
-import { Layout, Smartphone, Code, Wrench } from 'lucide-react'
+import { Layout, Code, Wrench, Database, Check } from 'lucide-react'
 
 import { Animation, SectionBackground } from './components/Animation'
 
 export default function Skills() {
   const skills = [
+    {
+      category: 'Backend',
+      icon: <Code className="w-8 h-8 text-red-500" />,
+      items: ['Node.js', 'SpringBoot', 'Java'],
+      desc: '企業システム開発の案件に参画経験あり。',
+    },
     {
       category: 'Frontend',
       icon: <Layout className="w-8 h-8 text-blue-500" />,
@@ -13,17 +19,23 @@ export default function Skills() {
       desc: 'アニメーションを交えた、美しくサクサク動く画面を構築します。',
     },
     {
-      category: 'Design & UX',
-      icon: <Smartphone className="w-8 h-8 text-orange-500" />,
-      items: ['Responsive Design', 'Mobile First', 'UI/UX', 'Framer Motion'],
+      category: 'DB',
+      icon: <Database className="w-8 h-8 text-orange-500" />,
+      items: [
+        'SSMS',
+        'SQLDeveloper',
+        'A5:SQL Mk-2',
+        'PostgreSQL',
+        'SQLServer',
+        'Oracle Database',
+      ],
       desc: 'スマホで見てもPCで見ても、迷わず使えるデザインを心がけています。',
     },
     {
-      category: 'Backend & Others',
-      icon: <Code className="w-8 h-8 text-emerald-500" />,
-      items: ['Node.js', 'Firebase', 'Git', 'Vercel'],
-      desc:
-        'お問い合わせフォームの設置など、必要な裏側のシステムも対応します。',
+      category: 'Others',
+      icon: <Check className="w-8 h-8 text-emerald-500" />,
+      items: ['Git', 'JP1', 'Jenkins', 'Confluence', 'Jira', 'Azure'],
+      desc: '多様なツールを用いた経験があり。',
     },
   ]
 
