@@ -9,8 +9,9 @@ export default function Skills() {
     {
       category: 'Backend',
       icon: <Code className="w-8 h-8 text-red-500" />,
-      items: ['Node.js', 'SpringBoot', 'Java'],
-      desc: '企業システム開発の案件に参画経験あり。',
+      items: ['SpringBoot', 'Java', 'Node.js'],
+      desc:
+        '大手企業案件に参画し、大規模開発の経験と可読性が高い実装を心がけます。',
     },
     {
       category: 'Frontend',
@@ -29,13 +30,13 @@ export default function Skills() {
         'SQLServer',
         'Oracle Database',
       ],
-      desc: 'スマホで見てもPCで見ても、迷わず使えるデザインを心がけています。',
+      desc: '多様なツールを用いた経験あり。',
     },
     {
       category: 'Others',
       icon: <Check className="w-8 h-8 text-emerald-500" />,
       items: ['Git', 'JP1', 'Jenkins', 'Confluence', 'Jira', 'Azure'],
-      desc: '多様なツールを用いた経験があり。',
+      desc: '多様なツールを用いた経験あり。',
     },
   ]
 

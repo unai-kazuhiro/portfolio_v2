@@ -7,23 +7,24 @@ import { Animation, SectionBackground } from './components/Animation'
 export default function Experience() {
   const experiences = [
     {
-      period: '2023 - Present',
-      role: 'フリーランス Webエンジニア',
-      description:
-        '個人事業主・小規模店舗向けのWebサイト構築を中心に活動。要件定義からデザイン提案、実装、保守まで一貫してサポート。',
-    },
-    {
-      period: '2020 - 2023',
-      role: 'フロントエンドエンジニア',
+      period: '2022 - ',
+      role: 'バックエンドエンジニア',
       company: '某IT企業',
       description:
-        'Reactを用いた業務アプリケーションのUI/UX開発に従事。パフォーマンスチューニングやコンポーネント設計を担当。',
+        'Javaやローコード、ノーコードなど様々なツールを経験し、大手企業のシステム開発に従事。現在、大手企業のロールシステムの開発に参画中。',
     },
     {
-      period: '2018 - 2020',
-      role: 'Web制作アシスタント',
+      period: '2021 - 2021',
+      role: '未経験エンジニア',
+      company: '某IT企業',
       description:
-        'HTML/CSSを用いたコーディング業務を経験。ここからWebの魅力に惹かれ、エンジニアリングの世界へ。',
+        '未経験エンジニアとしての活動をスタート。自社開発ツールを用いてプログラミングについて学びながらチーム開発を経験。',
+    },
+    {
+      period: '2016 - 2020',
+      role: 'パーソナルトレーナー',
+      description:
+        '約1000件以上のトレーニングを担当。加えて、資格取得スクール開催のための集客を担当。（SNS広告、Google広告の運用）',
     },
   ]
 
