@@ -15,6 +15,7 @@ export default function Header() {
     { name: 'Contact', href: '#contact' },
   ]
 
+  // スクロール検知
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
@@ -22,6 +23,18 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // メニュー展開中の背景スクロール防止を追加
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
 
   const scrollToSection = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -40,58 +53,61 @@ export default function Header() {
   }
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-sm py-4'
-          : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a
-          href="#hero"
-          onClick={(e) => scrollToSection(e, '#hero')}
-          className={`font-bold text-xl md:text-2xl tracking-tighter transition-colors ${
-            isScrolled ? 'text-slate-900' : 'text-slate'
-          }`}
-        >
-          Kazuhiro<span className="text-orange-500">.</span>Unai
-        </a>
+    // <> で全体を囲む（React Fragment）
+    <>
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/90 backdrop-blur-md shadow-sm py-4'
+            : 'bg-transparent py-6'
+        }`}
+      >
+        <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+          <a
+            href="#hero"
+            onClick={(e) => scrollToSection(e, '#hero')}
+            className={`font-bold text-xl md:text-2xl tracking-tighter transition-colors ${
+              isScrolled ? 'text-slate-900' : 'text-slate-900' // ※スマホ用に文字色を調整が必要な場合はここを変更
+            }`}
+          >
+            Kazuhiro<span className="text-orange-500">.</span>Unai
+          </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={(e) => scrollToSection(e, item.href)}
-              className={`text-sm font-medium transition-colors hover:text-orange-500 ${
-                isScrolled ? 'text-slate-600' : 'text-slate/80'
-              }`}
-            >
-              {item.name}
-            </a>
-          ))}
-        </nav>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={(e) => scrollToSection(e, item.href)}
+                className={`text-sm font-medium transition-colors hover:text-orange-500 ${
+                  isScrolled ? 'text-slate-600' : 'text-slate-800'
+                }`}
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden z-50 p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-6 h-6 text-slate-900" />
-          ) : (
-            <Menu
-              className={`w-6 h-6 ${
-                isScrolled ? 'text-slate-900' : 'text-slate'
-              }`}
-            />
-          )}
-        </button>
-      </div>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden z-50 p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6 text-slate-900" />
+            ) : (
+              <Menu
+                className={`w-6 h-6 ${
+                  isScrolled ? 'text-slate-900' : 'text-slate-800'
+                }`}
+              />
+            )}
+          </button>
+        </div>
+      </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay を header タグの外に出す */}
       <div
         className={`fixed inset-0 bg-white z-40 transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -110,6 +126,6 @@ export default function Header() {
           ))}
         </nav>
       </div>
-    </header>
+    </>
   )
 }
