@@ -39,7 +39,7 @@ export default function Home() {
       />
 
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <About />
         <Experience />

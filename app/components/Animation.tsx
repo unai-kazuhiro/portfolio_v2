@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 
 // スクロール時に要素が画面に入ったか、出たかを検知するフック（何度でも発火）
-function useInView(options = { threshold: 0.1 }) {
+function useInView(options: IntersectionObserverInit = { threshold: 0.1 }) {
   const [ref, setRef] = useState<HTMLElement | null>(null)
   const [inView, setInView] = useState(false)
 
@@ -41,7 +41,10 @@ export const Animation = ({
   className?: string
   animation?: AnimationType
 }) => {
-  const [ref, inView] = useInView({ threshold: 0.2 })
+  const [ref, inView] = useInView({
+    threshold: 0,
+    rootMargin: '0px 0px -10% 0px',
+  })
 
   const getAnimationClasses = () => {
     if (!inView) {
